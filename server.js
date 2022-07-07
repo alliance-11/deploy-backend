@@ -14,7 +14,7 @@ const app = express()
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.FRONTEND_ORIGIN,
     credentials: true,
   })
 ) // CORS check
@@ -29,7 +29,7 @@ app.use(
     proxy: true,
     cookie: {
       httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 5, // => 5 hours lifetime | 1000*60 = 1 min
+      maxAge: 1000 * 60 * 60 * 5, // => 5 hours lifetime | 1000*60 = 1 min      
     },
   })
 )
@@ -38,6 +38,9 @@ app.use(
 app.get("/", (req, res) => {
   res.json({
     message: "Welcome to Auth API. Hack me if you can...",
+    env: process.env.NODE_ENV || "development",
+    // wenn auf dem laptop => "" | undefined
+    // wenn deployen => production
   })
 })
 

@@ -8,13 +8,20 @@ POST {{API_URL}}/login
 Content-Type: application/json
 
 {
-  "email": "u2@u2.com",
-  "password": "u2"
+  "email": "u1@u1.com",
+  "password": "u1"
 }
 
-### PROTECTED RESOURCES
+# PROTECTED RESOURCES
+
+### ME route
+GET {{API_URL}}/me
+
+
+### Users 
 GET {{API_URL}}/users
 
+### Books
 GET {{API_URL}}/books
 
 ### LOGOUT
