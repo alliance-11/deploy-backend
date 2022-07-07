@@ -42,6 +42,7 @@ app.get("/", (req, res) => {
   res.json({
     message: "Welcome to Auth API. Hack me if you can...",
     env: process.env.NODE_ENV || "development",
+    frontendOrigin: process.env.FRONTEND_ORIGIN || "no origin found",
     // wenn auf dem laptop => "" | undefined
     // wenn deployen => production
   })
