@@ -1,4 +1,11 @@
-# session-auth-fullstack
+# Deploy
+
+- X .env Datei anlegen
+- .vercelignore => .env
+- Erster Deploy Backend
+
+
+## session-auth-fullstack
 
 This mini project shows how to integrate an AUTHENTICATION FLOW between a frontend and a backend.
 
