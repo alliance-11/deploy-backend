@@ -30,6 +30,9 @@ app.use(
     cookie: {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 5, // => 5 hours lifetime | 1000*60 = 1 min      
+      // on server => allow just secure cookies and allow sending them from DIFFERENT site
+      secure: process.env.NODE_ENV === "production", // => true
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
     },
   })
 )
